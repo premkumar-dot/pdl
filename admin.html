@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PDL Admin</title><link rel="stylesheet" href="/admin.css"></head>
+<body>
+<header><div class="brand"><b>PDL</b><span>ADMINISTRATION</span></div><a href="/">View Website ↗</a></header>
+<main>
+<section id="loginPanel" class="panel login">
+  <div class="eyebrow">PRIVATE ADMIN AREA</div><h1>Welcome back.</h1><p>Sign in to manage PDL enquiries, applications and transport partners.</p>
+  <form id="loginForm"><label>Username<input name="username" required autocomplete="username"></label><label>Password<input name="password" type="password" required autocomplete="current-password"></label><button>Sign in</button><p id="loginError" class="error"></p></form>
+</section>
+<section id="dashboard" hidden>
+  <div class="dash-head"><div><div class="eyebrow">PDL OPERATIONS</div><h1>Submission dashboard</h1><p>Review incoming enquiries, applicants and partner registrations.</p></div><button id="logout" class="secondary">Sign out</button></div>
+  <div class="stats" id="stats"></div>
+  <div class="toolbar"><input id="search" placeholder="Search name, email or company"><select id="type"><option value="">All submissions</option><option value="enquiry">Customer enquiries</option><option value="career">Career applications</option><option value="partner">Transport partners</option></select><select id="status"><option value="">All statuses</option><option>New</option><option>In Review</option><option>Contacted</option><option>Quoted</option><option>Shortlisted</option><option>Accepted</option><option>Rejected</option><option>Closed</option></select><button id="refresh" class="secondary">Refresh</button></div>
+  <div class="table-wrap"><table><thead><tr><th>ID / Date</th><th>Type</th><th>Contact</th><th>Details</th><th>Status</th><th></th></tr></thead><tbody id="rows"><tr><td colspan="6">Loading…</td></tr></tbody></table></div>
+  <p class="footnote">Latest 500 records. Attachments are stored privately and can only be accessed after admin sign-in.</p>
+</section>
+</main>
+<dialog id="detailDialog"><form method="dialog" class="dialog-head"><h2>Submission details</h2><button class="secondary">Close</button></form><div id="detailBody"></div></dialog>
+<script src="/admin.js"></script>
+</body></html>

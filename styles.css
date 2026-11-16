@@ -1,0 +1,855 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800;900&display=swap');
+:root{--black:#080808;--ink:#171717;--orange:#f58220;--orange2:#ff9b38;--white:#fff;--grey:#6b6b6b;--line:#e8e8e8;--soft:#f6f6f4;--font:'DM Sans',Arial,sans-serif;--display:'Montserrat',Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;color:var(--ink);font-family:var(--font);background:#fff}a{color:inherit;text-decoration:none}.container{width:min(1180px,calc(100% - 48px));margin:0 auto}.topline{background:#080808;color:#ddd;font-size:12px;letter-spacing:.04em}.topline-inner{height:34px;display:flex;align-items:center;justify-content:space-between}.topline a{color:#ffad68;font-weight:700}.site-header{height:86px;background:#fff;position:sticky;top:0;z-index:20;box-shadow:0 5px 24px #0000000a}.nav-wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;min-width:290px}.brand-mark{width:65px;height:48px;position:relative;display:flex;align-items:center;justify-content:center;transform:skew(-10deg)}.brand-mark b{font-family:var(--display);font-size:34px;font-weight:900;letter-spacing:-3px;color:#080808;z-index:1}.brand-mark:before{content:"";position:absolute;left:0;right:0;top:3px;height:22px;border-top:6px solid var(--orange);border-radius:80% 50% 0 0;transform:rotate(-12deg)}.road-mark{position:absolute;width:58px;height:8px;border-bottom:4px solid var(--orange);bottom:1px;left:4px;transform:rotate(-5deg)}.brand-copy{display:flex;flex-direction:column;gap:3px}.brand-copy strong{font-family:var(--display);font-size:10px;font-weight:900;letter-spacing:.045em;white-space:nowrap}.brand-copy small{font-size:10px;color:#777;font-weight:600}.main-nav{display:flex;align-items:center;gap:23px;font-size:12px;font-weight:700}.main-nav>a:not(.nav-cta){transition:color .2s}.main-nav>a:hover{color:var(--orange)}.nav-cta{background:var(--orange);color:#111;padding:13px 17px;border-radius:4px;font-weight:800;box-shadow:0 5px 12px #f5822030}.nav-cta span{margin-left:8px}.menu-toggle{display:none;background:none;border:0;padding:8px}.menu-toggle span{display:block;width:24px;height:2px;background:#111;margin:5px}
+.hero{background:#101010;color:#fff;position:relative;overflow:hidden;min-height:610px}.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 75% 38%,#f5822030,transparent 37%),linear-gradient(115deg,#080808 0%,#171717 58%,#080808 100%)}.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;min-height:575px;align-items:center}.hero-copy{padding:72px 0 90px;max-width:570px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.18em;color:var(--orange);margin-bottom:18px}.eyebrow-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--orange);margin-right:8px;box-shadow:0 0 0 5px #f5822020}.hero h1,.section h2{font-family:var(--display);font-size:clamp(48px,6vw,76px);line-height:.98;letter-spacing:-.065em;margin:0 0 24px;font-weight:900}.hero h1 em,.section h2 em{font-style:normal;color:var(--orange)}.hero-lead{font-size:20px;line-height:1.45;font-weight:700;max-width:490px;margin:0 0 14px}.hero-desc{color:#bdbdbd;font-size:14px;line-height:1.8;max-width:480px;margin:0 0 28px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.btn{min-height:48px;padding:0 20px;display:inline-flex;align-items:center;justify-content:center;gap:18px;border-radius:4px;font-size:12px;font-weight:800;letter-spacing:.01em;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s}.btn:hover{transform:translateY(-2px);box-shadow:0 9px 22px #0002}.btn-orange{background:var(--orange);color:#111}.btn-orange span,.btn-dark span,.btn-outline-light span{font-size:18px}.btn-outline{border-color:#666;color:#fff}.hero-proof{display:flex;align-items:center;gap:10px;color:#b9b9b9;font-size:11px;margin-top:36px}.hero-proof i{height:16px;width:1px;background:#555;margin:0 6px}.proof-icon{width:18px;height:18px;border-radius:50%;background:var(--orange);color:#111;font-weight:900;display:grid;place-items:center}.hero-art{height:510px;position:relative;display:flex;align-items:center;justify-content:center}.pogo-hero{height:490px;max-width:90%;object-fit:contain;position:relative;z-index:2;filter:drop-shadow(0 24px 25px #0008)}.art-orbit{position:absolute;border:1px solid #f5822040;border-radius:50%;transform:rotate(-25deg)}.orbit-one{width:490px;height:330px}.orbit-two{width:390px;height:250px;border-color:#ffffff1a}.pogo-label{position:absolute;right:-3px;top:85px;z-index:3;background:var(--orange);color:#111;padding:12px 17px 13px;transform:rotate(5deg);box-shadow:7px 8px 0 #0008}.pogo-label span,.pogo-label strong,.pogo-label small{display:block}.pogo-label span{font-size:10px;font-weight:900;letter-spacing:.16em}.pogo-label strong{font-family:var(--display);font-size:29px;font-weight:900;line-height:1}.pogo-label small{font-size:9px;font-weight:800;margin-top:3px}.mile-stamp{position:absolute;bottom:50px;left:5px;border:1px solid #ffffff4a;border-radius:50%;width:88px;height:88px;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-12deg);color:#fff}.mile-stamp b{font-family:var(--display);font-size:22px}.mile-stamp span{font-size:6px;letter-spacing:.1em}.hero-road{position:absolute;z-index:3;bottom:-25px;left:-5%;width:110%;height:62px;background:var(--orange);transform:rotate(-2deg);border-top:8px solid #fff}.hero-road:before{content:"";position:absolute;top:14px;left:0;right:0;height:35px;background:#111}.hero-road span{position:relative;z-index:2;display:inline-block;width:75px;border-top:4px dashed white;margin:27px 4% 0}
+.trust-strip{background:var(--orange);color:#111}.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);min-height:76px;align-items:center}.trust-grid>div{display:flex;align-items:center;gap:12px;border-right:1px solid #1113;padding-left:20px;font-size:12px;font-weight:800}.trust-grid>div:first-child{padding-left:0}.trust-grid>div:last-child{border:0}.trust-grid b{font-family:var(--display);font-size:21px;color:#fff}
+.section{padding:100px 0}.two-col{display:grid;grid-template-columns:1fr .9fr;gap:100px;align-items:center}.section h2{font-size:clamp(38px,4.5vw,58px);margin-bottom:23px}.section-intro p,.fleet-copy>p,.pogo-panel-copy>p,.quote-copy>p{font-size:15px;line-height:1.85;color:#666;max-width:490px}.text-link{display:inline-flex;gap:18px;margin-top:16px;font-size:12px;font-weight:900;border-bottom:2px solid var(--orange);padding-bottom:8px}.text-link span{color:var(--orange)}.about-card{min-height:380px;background:#111;position:relative;overflow:hidden;color:#fff;padding:29px;display:flex;flex-direction:column;justify-content:space-between}.about-card:before{content:"";position:absolute;width:340px;height:340px;border:1px solid #f5822055;border-radius:50%;right:-60px;top:-100px}.about-card:after{content:"";position:absolute;width:250px;height:250px;border:1px solid #ffffff25;border-radius:50%;right:-20px;top:-50px}.about-card-top,.about-card-bottom{position:relative;z-index:2}.mini-road{font-size:10px;letter-spacing:.2em;color:var(--orange);font-weight:800}.circle-arrow{float:right;border:1px solid #ffffff55;border-radius:50%;width:38px;height:38px;display:grid;place-items:center}.route-line{display:flex;align-items:center;gap:7px;margin-bottom:22px}.route-line span{width:7px;height:7px;background:var(--orange);border-radius:50%}.route-line span:nth-child(2){width:65px;height:1px;border-radius:0;background:repeating-linear-gradient(90deg,var(--orange) 0 5px,transparent 5px 10px)}.about-card h3{font-family:var(--display);font-size:38px;line-height:1.05;letter-spacing:-.05em;margin:0 0 12px}.about-card h3 em{font-style:normal;color:var(--orange)}.about-card-bottom p{color:#aaa;font-size:12px}.about-orange{position:absolute;width:220px;height:8px;background:var(--orange);right:-20px;bottom:60px;transform:rotate(-25deg)}
+.services-section{background:#f5f5f3}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:42px}.section-heading>p{max-width:330px;color:#6d6d6d;font-size:14px;line-height:1.8;margin-bottom:26px}.section-heading h2{margin-bottom:0}.service-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.service-card{background:#fff;padding:25px 20px 26px;min-height:235px;position:relative;border:1px solid #e9e9e7;transition:transform .2s,box-shadow .2s}.service-card:hover{transform:translateY(-5px);box-shadow:0 16px 35px #0000000c}.service-icon{width:54px;height:54px;background:#fff1e5;border-radius:50%;display:grid;place-items:center;margin-bottom:25px}.service-icon svg{width:31px;height:31px;fill:none;stroke:#111;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.card-no{position:absolute;right:18px;top:24px;font-size:10px;color:#bbb;font-weight:800}.service-card h3{font-family:var(--display);font-size:14px;line-height:1.3;margin:0 0 10px;font-weight:800}.service-card p{font-size:11px;line-height:1.7;color:#777;margin:0}
+.fleet-section{background:#111;color:#fff;overflow:hidden}.fleet-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:center}.fleet-copy h2{font-size:55px}.fleet-copy>p{color:#aaa}.fleet-points{display:grid;gap:12px;margin:27px 0 30px;font-size:12px;color:#ddd}.fleet-points b{color:var(--orange);margin-right:8px}.btn-dark{background:var(--orange);color:#111}.fleet-visual{height:430px;position:relative;display:flex;flex-direction:column;justify-content:center;gap:15px}.fleet-backdrop{position:absolute;inset:20px -80px 10px 0;background:linear-gradient(155deg,#262626,#0c0c0c);border-radius:50% 0 0 50%;overflow:hidden}.lane{position:absolute;height:2px;background:#f5822070;transform:rotate(-16deg);width:120%;left:-10%}.lane-a{top:37%}.lane-b{top:68%;background:#fff2}.vehicle{position:relative;z-index:2;filter:drop-shadow(0 15px 12px #0008)}.vehicle-truck{height:145px;margin-left:8px;display:flex;align-items:flex-end}.truck-cab{height:100px;width:112px;background:#f5f5f5;border:4px solid #111;border-radius:15px 25px 5px 5px;position:relative;z-index:2}.truck-cab:after{content:"";position:absolute;right:-12px;bottom:0;width:18px;height:25px;background:#ddd;transform:skew(20deg)}.truck-window{position:absolute;right:8px;top:10px;width:55px;height:35px;background:#202a30;border-radius:5px 13px 2px 2px;border:3px solid #777}.truck-cab:before{content:"PDL";position:absolute;bottom:25px;left:17px;color:#111;font-family:var(--display);font-weight:900;font-size:17px}.truck-box{height:125px;flex:1;background:#fff;border:4px solid #aaa;border-radius:5px;position:relative;overflow:visible;color:#111;padding:14px 20px}.vehicle-logo{font-family:var(--display);font-size:34px;font-weight:900;font-style:italic;letter-spacing:-3px;position:relative;z-index:1}.vehicle-logo small{display:block;font-family:var(--font);font-size:7px;letter-spacing:.03em;font-style:normal;margin-top:-6px}.vehicle-stripe{position:absolute;left:0;right:0;bottom:12px;height:23px;background:var(--orange);transform:skewY(-7deg)}.vehicle-pogo{position:absolute;right:16px;top:35px;background:#111;color:var(--orange);font-family:var(--display);font-size:13px;font-weight:900;padding:8px;border-radius:50% 50% 8px 8px}.truck-wheel,.van-wheel{position:absolute;width:39px;height:39px;border:7px solid #111;background:#888;border-radius:50%;bottom:-20px;z-index:4;box-shadow:inset 0 0 0 4px #ddd}.w1{left:20px}.w2{left:90px}.w3{right:65px}.w4{right:10px}.vehicle-van{height:120px;width:75%;margin-left:100px;display:flex;align-items:flex-end}.van-body{height:105px;flex:1;background:#f5f5f5;border:4px solid #111;border-radius:22px 25px 5px 5px;position:relative;padding:13px 18px;overflow:hidden}.van-window{position:absolute;right:12px;top:8px;width:72px;height:40px;background:#202a30;border-radius:7px;border:3px solid #888}.van-body .vehicle-logo{font-size:27px}.van-body .vehicle-logo small{font-size:6px}.van-stripe{position:absolute;bottom:8px;left:-10px;right:-10px;height:18px;background:var(--orange);transform:rotate(-7deg)}.van-pogo{position:absolute;right:17px;bottom:32px;font-family:var(--display);font-size:12px;font-weight:900;color:#111;background:var(--orange);padding:5px 8px;border-radius:4px}.vw1{left:65px}.vw2{right:50px}.visual-note{position:relative;z-index:2;text-align:right;color:#777;font-size:9px;margin:12px 5px 0 0}
+.pogo-section{background:#f4f4f2;padding:80px 0}.pogo-panel{background:#fff;min-height:360px;display:grid;grid-template-columns:1fr 340px;align-items:center;position:relative;overflow:hidden;padding:45px 65px}.pogo-panel:after{content:"";position:absolute;width:500px;height:500px;border:1px solid #f5822033;border-radius:50%;right:-60px;top:-80px}.pogo-panel-copy{position:relative;z-index:2}.pogo-panel-copy h2{font-size:58px;margin-bottom:15px}.pogo-panel-copy>p{max-width:440px}.pogo-panel img{height:350px;width:100%;object-fit:contain;position:relative;z-index:2;filter:drop-shadow(0 12px 10px #0002)}.pogo-values{display:flex;gap:9px;flex-wrap:wrap;margin-top:23px}.pogo-values span{font-size:8px;letter-spacing:.1em;font-weight:900;border:1px solid #ddd;padding:9px 11px}.pogo-values span:first-child{border-color:var(--orange);background:#fff4e9}
+.quote-section{background:#fff}.quote-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px;align-items:start}.quote-copy h2{font-size:54px}.quote-contact{display:grid;gap:8px;margin-top:35px;font-size:12px}.quote-contact span{color:#888;font-weight:700}.quote-contact a{font-weight:800}.quote-contact a:hover{color:var(--orange)}.quote-form{padding:35px;background:#f6f6f4;border-top:4px solid var(--orange)}.form-heading{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px}.form-heading b{font-family:var(--display);font-size:20px}.form-heading span,.form-note{font-size:10px;color:#888}.quote-form label{display:grid;gap:8px;font-size:11px;font-weight:800;margin-bottom:16px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}.quote-form input,.quote-form select,.quote-form textarea{width:100%;border:1px solid #ddd;background:#fff;padding:13px 12px;font:12px var(--font);border-radius:2px;outline:none}.quote-form input:focus,.quote-form select:focus,.quote-form textarea:focus{border-color:var(--orange);box-shadow:0 0 0 3px #f5822018}.quote-form textarea{resize:vertical}.submit-btn{width:100%;border:0}.form-note{line-height:1.5;margin:12px 0 0}.form-status{font-size:11px;color:#267044;margin:8px 0 0;min-height:15px}
+.careers-section{background:#111;color:#fff;position:relative;overflow:hidden;padding:76px 0}.careers-inner{display:flex;align-items:center;justify-content:space-between;gap:35px;position:relative;z-index:2}.careers-inner h2{font-size:48px;margin-bottom:12px}.careers-inner p{color:#aaa;font-size:13px;max-width:500px;line-height:1.7;margin:0}.btn-outline-light{border-color:#777;color:#fff;white-space:nowrap}.careers-road{position:absolute;right:-200px;bottom:-160px;width:520px;height:260px;border:18px solid #f5822020;border-radius:50%;transform:rotate(-20deg)}
+.contact-section{background:#f6f6f4}.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.contact-card{background:#fff;padding:26px;min-height:180px;display:flex;flex-direction:column;align-items:flex-start;border:1px solid #eee;transition:transform .2s}.contact-card:hover{transform:translateY(-4px);border-color:#f5822066}.contact-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:#fff0e3;color:#111;font-size:20px;margin-bottom:18px}.contact-card small{font-size:9px;letter-spacing:.14em;color:#999;font-weight:900;margin-bottom:7px}.contact-card strong{font-size:13px;line-height:1.4}.contact-card>span:last-child{font-size:10px;color:#888;margin-top:7px}
+.site-footer{background:#080808;color:#fff;padding:55px 0 0}.footer-main{display:grid;grid-template-columns:1.5fr .7fr 1.1fr .7fr;gap:35px;padding-bottom:45px}.brand-light .brand-mark b{color:#fff}.brand-light .brand-copy strong{color:#fff}.brand-light .brand-copy small{color:#999}.footer-brand>p{font-size:11px;line-height:1.7;color:#999;max-width:260px;margin-top:18px}.footer-links{display:flex;flex-direction:column;gap:12px;font-size:11px;color:#aaa}.footer-links b{font-size:9px;letter-spacing:.15em;color:var(--orange);margin-bottom:5px}.footer-links a:hover{color:#fff}.footer-pogo{display:flex;flex-direction:column;align-items:center;justify-content:end}.footer-pogo img{height:125px;max-width:120px;object-fit:contain}.footer-pogo span{font-size:9px;color:var(--orange);font-weight:800}.footer-bottom{border-top:1px solid #ffffff1c;padding:18px 0;display:flex;justify-content:space-between;color:#777;font-size:9px}.floating-call{position:fixed;right:22px;bottom:22px;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:#f58220;color:#111;font-size:23px;font-weight:900;box-shadow:0 7px 20px #0003;z-index:10}
+@media(max-width:1050px){.main-nav{gap:13px}.brand{min-width:250px}.brand-copy strong{font-size:9px}.hero-grid{grid-template-columns:1fr  .85fr}.pogo-hero{height:420px}.service-grid{grid-template-columns:repeat(3,1fr)}.fleet-grid{gap:20px}.quote-grid{gap:45px}.footer-main{grid-template-columns:1.3fr .7fr 1fr}.footer-pogo{display:none}}
+@media(max-width:760px){.container{width:min(100% - 34px,560px)}.topline-inner{height:32px;font-size:10px}.site-header{height:72px}.brand{min-width:0;gap:8px}.brand-mark{width:52px}.brand-mark b{font-size:29px}.brand-copy strong{font-size:8px;white-space:normal;max-width:185px}.brand-copy small{font-size:9px}.menu-toggle{display:block}.main-nav{display:none;position:absolute;left:0;right:0;top:72px;background:#fff;padding:20px 25px 25px;box-shadow:0 14px 18px #0001;flex-direction:column;align-items:stretch;gap:0}.main-nav.open{display:flex}.main-nav>a{padding:13px 0;border-bottom:1px solid #eee}.main-nav .nav-cta{margin-top:12px;padding:14px 16px;text-align:center;border:0}.hero-grid{grid-template-columns:1fr;min-height:0}.hero-copy{padding:62px 0 10px}.hero h1{font-size:58px}.hero-lead{font-size:17px}.hero-art{height:390px;margin-top:-5px}.pogo-hero{height:360px;max-width:75%}.pogo-label{right:5px;top:55px}.mile-stamp{left:5px;bottom:35px;width:68px;height:68px}.mile-stamp b{font-size:17px}.hero-road{height:50px;bottom:-22px}.hero-road span{width:45px;margin:23px 3% 0}.trust-grid{grid-template-columns:1fr 1fr;padding:13px 0;gap:12px}.trust-grid>div{padding:8px 4px;border:0;font-size:10px}.trust-grid b{font-size:16px}.section{padding:70px 0}.two-col,.fleet-grid,.quote-grid{grid-template-columns:1fr;gap:35px}.about-card{min-height:320px}.section-heading{display:block}.section-heading>p{margin-top:20px;margin-bottom:0}.service-grid{grid-template-columns:1fr 1fr}.service-card{min-height:205px;padding:20px 15px}.service-card h3{font-size:12px}.service-card p{font-size:10px}.fleet-copy h2,.quote-copy h2{font-size:46px}.fleet-visual{height:330px;margin-top:10px}.vehicle-truck{height:110px}.truck-cab{height:82px;width:85px}.truck-box{height:100px;padding:10px}.vehicle-logo{font-size:25px}.vehicle-logo small{font-size:5px}.vehicle-pogo{display:none}.vehicle-van{height:95px;width:84%;margin-left:45px}.van-body{height:82px;padding:10px}.van-body .vehicle-logo{font-size:21px}.van-pogo{font-size:9px;bottom:23px}.truck-wheel,.van-wheel{width:30px;height:30px;border-width:5px;bottom:-15px}.w1{left:12px}.w2{left:65px}.w3{right:50px}.w4{right:8px}.vw1{left:45px}.vw2{right:30px}.pogo-section{padding:55px 0}.pogo-panel{grid-template-columns:1fr;padding:30px 25px 0}.pogo-panel-copy h2{font-size:47px}.pogo-panel img{height:270px;margin-top:5px}.pogo-values span{font-size:7px}.quote-form{padding:24px 18px}.form-row{grid-template-columns:1fr;gap:0}.careers-inner{display:block}.careers-inner h2{font-size:42px}.careers-inner .btn{margin-top:25px}.contact-grid{grid-template-columns:1fr}.contact-card{min-height:145px}.footer-main{grid-template-columns:1fr 1fr;gap:28px}.footer-brand{grid-column:1/-1}.footer-bottom{display:grid;gap:8px;line-height:1.5}.floating-call{right:14px;bottom:14px;width:46px;height:46px}}
+@media(max-width:390px){.brand-copy strong{max-width:150px;font-size:7px}.hero h1{font-size:51px}.service-grid{gap:8px}.service-card{padding:16px 12px}.pogo-label strong{font-size:24px}}
+
+/* Original PDL fleet artwork */
+.fleet-visual.fleet-originals{height:auto;min-height:0;display:flex;flex-direction:column;justify-content:center;align-items:stretch;gap:8px;padding:20px 0}
+.fleet-visual.fleet-originals:before{content:"";position:absolute;inset:10px -60px 25px 0;background:linear-gradient(155deg,#262626,#0c0c0c);border-radius:50% 0 0 50%}
+.fleet-visual.fleet-originals img{position:relative;z-index:2;display:block;width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 12px 10px #0006)}
+.fleet-visual.fleet-originals .visual-note{z-index:3;margin:0 5px 0 0}
+@media(max-width:760px){.fleet-visual.fleet-originals{height:auto;min-height:0;padding:12px 0;gap:12px}.fleet-visual.fleet-originals:before{inset:0 -20px 15px 0}.fleet-visual.fleet-originals img{width:100%}}
+
+/* Approved homepage direction: Singapore skyline, Pogo hero, and service shortcut strip */
+.hero.hero-singapore{min-height:490px;background:#d9eaf6;color:#111;overflow:hidden}
+.hero.hero-singapore:before{display:none}
+.hero-city{position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(13,24,43,.78) 0%,rgba(13,24,43,.38) 42%,rgba(13,24,43,.05) 100%),url("assets/singapore-skyline.svg");background-size:cover;background-position:center 54%}
+.hero-singapore .hero-grid{min-height:490px;grid-template-columns:.9fr 1.1fr}
+.hero-singapore .hero-copy{padding:60px 0 65px;max-width:520px;position:relative;z-index:3}
+.hero-singapore .eyebrow{color:#ff9a35}
+.hero-singapore h1{font-size:clamp(48px,5.2vw,68px);margin-bottom:17px;text-shadow:0 2px 12px #07172b30}
+.hero-singapore h1 em{color:#ff861d}
+.hero-singapore .hero-lead{font-size:18px;line-height:1.25;color:#fff;text-shadow:0 2px 9px #07172b80;margin-bottom:23px}
+.hero-singapore .hero-art{height:490px;align-items:flex-end;justify-content:center}
+.hero-singapore .pogo-hero{height:440px;max-width:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 15px 18px #061a2c55);margin-bottom:0}
+.hero-singapore .hero-city-glow{position:absolute;inset:0;background:linear-gradient(90deg,transparent,#f4a95b25);pointer-events:none}
+.services-shortcuts{background:#fff;position:relative;z-index:4;box-shadow:0 9px 28px #0000000c}
+.shortcut-grid{display:grid;grid-template-columns:repeat(5,1fr);min-height:108px;align-items:stretch}
+.shortcut-grid>a{display:flex;align-items:center;justify-content:center;gap:12px;padding:16px 12px;border-right:1px solid #dedede;text-align:left;transition:background .2s}
+.shortcut-grid>a:last-child{border-right:0}
+.shortcut-grid>a:hover{background:#fff6ee}
+.shortcut-grid b{font-family:var(--display);font-size:12px;line-height:1.25;font-weight:900;color:#151515}
+.shortcut-icon{width:42px;height:42px;display:grid;place-items:center;flex:none}
+.shortcut-icon svg{width:39px;height:39px;stroke:#111;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.shortcut-grid>a:nth-child(2) .shortcut-icon svg,.shortcut-grid>a:nth-child(3) .shortcut-icon svg,.shortcut-grid>a:nth-child(5) .shortcut-icon svg{stroke:#f58220}
+.fleet-visual.fleet-originals{height:auto;min-height:0;display:block;padding:0;position:relative}
+.fleet-visual.fleet-originals:before{content:"";position:absolute;inset:0;background:#171717;border-radius:48% 0 0 48%;opacity:.85}
+.fleet-visual.fleet-originals img{position:relative;z-index:2;width:100%;height:auto;display:block;object-fit:contain;filter:none;border-radius:0}
+.fleet-visual.fleet-originals .visual-note{position:relative;z-index:3;text-align:right;margin:4px 10px 0 0}
+@media(max-width:760px){
+ .hero.hero-singapore{min-height:0}
+ .hero-city{background-position:58% center}
+ .hero-singapore .hero-grid{min-height:0;grid-template-columns:1fr}
+ .hero-singapore .hero-copy{padding:52px 0 0}
+ .hero-singapore h1{font-size:52px}
+ .hero-singapore .hero-lead{font-size:16px}
+ .hero-singapore .hero-art{height:300px;margin-top:-2px}
+ .hero-singapore .pogo-hero{height:300px;max-width:78%}
+ .shortcut-grid{grid-template-columns:repeat(2,1fr);padding:8px 0}
+ .shortcut-grid>a{justify-content:flex-start;padding:13px 8px;border-right:0;border-bottom:1px solid #eee}
+ .shortcut-grid>a:last-child{grid-column:1/-1;justify-content:center;border-bottom:0}
+ .shortcut-grid b{font-size:10px}
+ .shortcut-icon{width:34px;height:34px}
+ .shortcut-icon svg{width:31px;height:31px}
+ .fleet-visual.fleet-originals{height:auto;min-height:0}
+ .fleet-visual.fleet-originals:before{inset:0}
+}
+
+/* Final homepage hero: match the approved Marina Bay reference image */
+.topline{display:none!important}
+.site-header{height:76px;box-shadow:0 3px 14px #0000000c}
+.nav-wrap{max-width:1240px}
+.brand-mark{width:58px}
+.brand-copy strong{font-size:10px}
+.main-nav{gap:22px;font-size:11px}
+.hero.hero-singapore{min-height:435px;background:#071c3b;color:#fff}
+.hero-city{background-image:linear-gradient(90deg,rgba(2,17,43,.82) 0%,rgba(4,25,56,.55) 42%,rgba(4,25,56,.08) 100%),url("assets/singapore-marina-bay.jpg");background-size:cover;background-position:center 56%}
+.hero-singapore .hero-grid{min-height:435px;grid-template-columns:.95fr 1.05fr;align-items:stretch}
+.hero-singapore .hero-copy{padding:62px 0 65px;max-width:500px;align-self:center}
+.hero-singapore .eyebrow{display:none}
+.hero-singapore h1{font-size:clamp(52px,5.6vw,76px);line-height:.93;color:#fff;letter-spacing:-.06em;margin-bottom:20px;text-shadow:0 2px 14px #00132c60}
+.hero-singapore h1 em{display:block;color:#ff861d}
+.hero-singapore .hero-lead{font-size:19px;line-height:1.25;color:#fff;font-weight:700;margin-bottom:25px;text-shadow:0 2px 10px #00132c70}
+.hero-singapore .hero-art{height:435px;align-items:flex-end;justify-content:center;overflow:visible}
+.hero-singapore .pogo-hero{height:410px;width:auto;max-width:100%;object-fit:contain;object-position:center bottom;margin:0 0 -1px;filter:drop-shadow(0 10px 20px #00142c66)}
+.hero-singapore .hero-city-glow{display:none}
+.hero-singapore:after{content:"";position:absolute;z-index:1;left:0;right:0;bottom:0;height:17px;background:linear-gradient(170deg,transparent 0 27%,#f58220 28% 100%);opacity:.95;pointer-events:none}
+.services-shortcuts{min-height:96px}
+.shortcut-grid{min-height:96px;max-width:1180px}
+.shortcut-grid>a{gap:13px;padding:14px 18px}
+.shortcut-grid b{font-size:12px}
+.shortcut-icon{width:43px;height:43px}
+.shortcut-icon svg{width:39px;height:39px}
+@media(max-width:760px){
+ .site-header{height:70px}
+ .hero.hero-singapore{min-height:0}
+ .hero-city{background-position:58% center}
+ .hero-singapore .hero-grid{min-height:0;grid-template-columns:1fr}
+ .hero-singapore .hero-copy{padding:45px 0 0}
+ .hero-singapore h1{font-size:52px}
+ .hero-singapore .hero-lead{font-size:16px}
+ .hero-singapore .hero-art{height:290px;margin-top:-3px}
+ .hero-singapore .pogo-hero{height:290px;max-width:80%}
+ .hero-singapore:after{height:11px}
+ .services-shortcuts{min-height:0}
+}
+
+
+/* PDL homepage refinement: full Pogo mascot + services band over the sunset hero */
+.hero.hero-singapore{
+  min-height:590px;
+  position:relative;
+  overflow:hidden;
+  background:#08264b;
+}
+.hero-city{
+  background-image:
+    linear-gradient(90deg,rgba(2,18,46,.78) 0%,rgba(2,18,46,.46) 42%,rgba(2,18,46,.08) 76%,rgba(2,18,46,.02) 100%),
+    url("assets/singapore-marina-bay.jpg");
+  background-size:cover;
+  background-position:center 56%;
+}
+.hero-singapore .hero-grid{
+  min-height:590px;
+  grid-template-columns:.95fr 1.05fr;
+  align-items:end;
+  padding-top:100px;
+  padding-bottom:0;
+}
+.hero-singapore .hero-copy{
+  padding:30px 0 100px;
+  align-self:center;
+  position:relative;
+  z-index:3;
+}
+.hero-singapore h1{
+  font-size:clamp(54px,5.5vw,78px);
+  line-height:.94;
+  color:#fff;
+  margin-bottom:20px;
+}
+.hero-singapore h1 em{color:#ff861d}
+.hero-singapore .hero-lead{
+  color:#fff;
+  font-size:19px;
+  line-height:1.28;
+  margin-bottom:25px;
+  text-shadow:0 2px 10px #00142d70;
+}
+.hero-singapore .hero-art{
+  height:490px;
+  align-items:flex-end;
+  justify-content:center;
+  overflow:visible;
+  position:relative;
+  z-index:2;
+}
+.hero-singapore .pogo-hero{
+  display:block;
+  width:auto;
+  height:480px;
+  max-width:100%;
+  object-fit:contain;
+  object-position:center bottom;
+  margin:0 auto -2px;
+  filter:drop-shadow(0 12px 18px #00142d66);
+}
+.hero-singapore .hero-city-glow{display:none}
+.hero-singapore:after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:14px;
+  z-index:3;
+  background:#f58220;
+}
+.hero-singapore .services-shortcuts{
+  position:absolute;
+  top:0;left:0;right:0;
+  z-index:5;
+  min-height:76px;
+  background:rgba(255,255,255,.91);
+  border-bottom:1px solid rgba(255,255,255,.5);
+  box-shadow:0 5px 18px rgba(0,0,0,.10);
+  backdrop-filter:blur(8px);
+}
+.hero-singapore .shortcut-grid{
+  min-height:76px;
+  max-width:1180px;
+}
+.hero-singapore .shortcut-grid>a{
+  min-height:76px;
+  background:transparent;
+}
+.hero-singapore .shortcut-grid>a:hover{background:rgba(255,255,255,.72)}
+@media(max-width:760px){
+  .hero.hero-singapore{min-height:0}
+  .hero-city{background-position:58% center}
+  .hero-singapore .services-shortcuts{
+    position:relative;
+    background:rgba(255,255,255,.94);
+  }
+  .hero-singapore .shortcut-grid{
+    min-height:0;
+    grid-template-columns:repeat(2,1fr);
+    padding:4px 0;
+  }
+  .hero-singapore .shortcut-grid>a{
+    min-height:58px;
+    padding:8px 7px;
+    border:0;
+    border-bottom:1px solid #eee;
+  }
+  .hero-singapore .shortcut-grid>a:last-child{
+    grid-column:1/-1;
+    justify-content:center;
+    border-bottom:0;
+  }
+  .hero-singapore .hero-grid{
+    min-height:0;
+    grid-template-columns:1fr;
+    padding-top:30px;
+    padding-bottom:0;
+  }
+  .hero-singapore .hero-copy{padding:34px 0 8px}
+  .hero-singapore h1{font-size:52px}
+  .hero-singapore .hero-lead{font-size:16px}
+  .hero-singapore .hero-art{height:360px;margin-top:0}
+  .hero-singapore .pogo-hero{
+    height:355px;
+    max-width:88%;
+  }
+}
+
+
+/* Full-screen hero with the service shortcuts overlaying the same background */
+.hero.hero-singapore{
+  min-height:calc(100svh - 76px);
+  height:calc(100svh - 76px);
+  max-height:none;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+.hero.hero-singapore .hero-city{
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(90deg,rgba(2,18,46,.78) 0%,rgba(2,18,46,.43) 44%,rgba(2,18,46,.08) 78%,rgba(2,18,46,.02) 100%),
+    url("assets/singapore-marina-bay.jpg");
+  background-size:cover;
+  background-position:center 56%;
+}
+.hero.hero-singapore .services-shortcuts{
+  position:absolute;
+  z-index:6;
+  top:0;
+  left:0;
+  right:0;
+  width:100%;
+  min-height:78px;
+  background:rgba(255,255,255,.90);
+  border-bottom:1px solid rgba(255,255,255,.7);
+  box-shadow:0 5px 20px rgba(0,0,0,.13);
+  backdrop-filter:blur(9px);
+}
+.hero.hero-singapore .shortcut-grid{
+  min-height:78px;
+  max-width:1180px;
+}
+.hero.hero-singapore .shortcut-grid>a{
+  min-height:78px;
+  background:transparent;
+}
+.hero.hero-singapore .hero-grid{
+  flex:1;
+  min-height:0;
+  height:100%;
+  padding-top:78px;
+  padding-bottom:12px;
+  align-items:end;
+  grid-template-columns:.95fr 1.05fr;
+}
+.hero.hero-singapore .hero-copy{
+  align-self:center;
+  padding:20px 0 25px;
+}
+.hero.hero-singapore .hero-art{
+  height:100%;
+  min-height:0;
+  align-items:flex-end;
+  justify-content:center;
+}
+.hero.hero-singapore .pogo-hero{
+  height:min(78vh,720px);
+  max-height:100%;
+  width:auto;
+  max-width:100%;
+  object-fit:contain;
+  object-position:center bottom;
+  margin:0 auto;
+}
+.hero.hero-singapore:after{
+  height:12px;
+  z-index:7;
+}
+.fleet-visual.fleet-originals{
+  height:auto;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  padding:4px 0;
+  position:relative;
+}
+.fleet-visual.fleet-originals:before{display:none}
+.fleet-vehicle-card{
+  position:relative;
+  z-index:2;
+  width:100%;
+  background:#f8f8f7;
+  border:1px solid #e5e5e3;
+  border-radius:7px;
+  overflow:hidden;
+  padding:12px 16px 10px;
+  box-shadow:0 10px 24px rgba(0,0,0,.18);
+}
+.fleet-vehicle-card:after{
+  content:"";
+  display:block;
+  height:7px;
+  margin:0 -16px -10px;
+  background:linear-gradient(90deg,#111 0 22%,#f58220 22% 78%,#111 78%);
+}
+.fleet-vehicle-label{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#111;
+  margin-bottom:5px;
+}
+.fleet-vehicle-label span{
+  color:#f58220;
+  font:800 11px var(--display);
+  letter-spacing:.12em;
+}
+.fleet-vehicle-label strong{
+  font:800 12px var(--display);
+}
+.fleet-vehicle-card img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:220px;
+  object-fit:contain;
+  object-position:center;
+  filter:none;
+}
+.fleet-visual.fleet-originals .visual-note{
+  position:relative;
+  z-index:2;
+  text-align:right;
+  color:#aaa;
+  margin:0 4px;
+}
+@media(max-width:760px){
+  .hero.hero-singapore{
+    height:auto;
+    min-height:0;
+  }
+  .hero.hero-singapore .hero-city{background-position:58% center}
+  .hero.hero-singapore .services-shortcuts{
+    position:relative;
+    background:rgba(255,255,255,.94);
+  }
+  .hero.hero-singapore .shortcut-grid{
+    min-height:0;
+    grid-template-columns:repeat(2,1fr);
+    padding:4px 0;
+  }
+  .hero.hero-singapore .shortcut-grid>a{
+    min-height:58px;
+    padding:8px 7px;
+    border:0;
+    border-bottom:1px solid #eee;
+  }
+  .hero.hero-singapore .shortcut-grid>a:last-child{
+    grid-column:1/-1;
+    justify-content:center;
+    border-bottom:0;
+  }
+  .hero.hero-singapore .hero-grid{
+    min-height:0;
+    height:auto;
+    padding-top:28px;
+    padding-bottom:0;
+    grid-template-columns:1fr;
+  }
+  .hero.hero-singapore .hero-copy{padding:24px 0 0}
+  .hero.hero-singapore .hero-art{height:370px;min-height:0}
+  .hero.hero-singapore .pogo-hero{
+    height:360px;
+    max-height:none;
+    max-width:88%;
+  }
+  .fleet-vehicle-card{padding:10px 10px 8px}
+  .fleet-vehicle-card img{max-height:170px}
+  .fleet-vehicle-card:after{margin:0 -10px -8px}
+}
+@media(min-width:761px) and (max-height:700px){
+  .hero.hero-singapore .pogo-hero{height:66vh}
+}
+
+
+/* FIX: Use clear, full-colour Pogo poses in BOTH service navigation and service cards */
+.hero.hero-singapore .shortcut-grid>a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:5px 10px;
+  min-width:0;
+}
+.shortcut-pogo{
+  display:block;
+  width:72px;
+  height:66px;
+  flex:0 0 72px;
+  object-fit:contain;
+  object-position:center;
+  opacity:1;
+  filter:none;
+}
+.shortcut-grid b{
+  flex:0 1 auto;
+  text-align:left;
+  white-space:normal;
+  line-height:1.15;
+}
+.service-pogo-card{
+  background:#fff;
+  border:1px solid #e5e5e5;
+  border-radius:5px;
+  min-height:325px;
+  padding:14px 12px 18px;
+}
+.service-pogo-card .service-pogo{
+  height:190px;
+  width:100%;
+  max-width:100%;
+  object-fit:contain;
+  object-position:center bottom;
+  display:block;
+  opacity:1;
+  filter:none;
+  mix-blend-mode:normal;
+  margin:0 auto 10px;
+}
+.service-pogo-card h3{
+  min-height:34px;
+  margin:0 0 8px;
+  color:#111;
+}
+.service-pogo-card p{
+  color:#777;
+  line-height:1.5;
+  font-size:11px;
+  margin-top:auto;
+}
+@media(max-width:1050px){
+ .shortcut-pogo{width:58px;height:60px;flex-basis:58px}
+ .service-pogo-card .service-pogo{height:170px}
+}
+@media(max-width:760px){
+ .hero.hero-singapore .shortcut-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hero.hero-singapore .shortcut-grid>a{justify-content:flex-start;gap:6px;padding:5px 7px}
+ .shortcut-pogo{width:54px;height:54px;flex-basis:54px}
+ .shortcut-grid b{font-size:10px}
+ .service-pogo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .service-pogo-card{min-height:280px;padding:12px 9px}
+ .service-pogo-card .service-pogo{height:150px}
+}
+
+
+/* Detailed What We Do cards: clear, full-colour Pogo service poses */
+.service-pogo-grid{
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  align-items:stretch;
+  gap:14px;
+}
+.service-pogo-card{
+  position:relative;
+  min-height:330px;
+  padding:18px 16px 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  overflow:hidden;
+}
+.service-pogo-card .service-icon{display:none}
+.service-pogo-card .card-no{
+  position:absolute;
+  top:14px;
+  right:14px;
+  z-index:2;
+}
+.service-pogo{
+  display:block;
+  width:100%;
+  height:185px;
+  object-fit:contain;
+  object-position:center bottom;
+  margin:0 auto 12px;
+}
+.service-pogo-card h3{
+  width:100%;
+  min-height:38px;
+  margin:0 0 8px;
+  font-size:13px;
+}
+.service-pogo-card p{
+  margin:0 auto;
+  max-width:205px;
+  font-size:11px;
+  line-height:1.6;
+}
+@media(max-width:1050px){
+  .service-pogo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .service-pogo-card{min-height:315px}
+}
+@media(max-width:760px){
+  .service-pogo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .service-pogo-card{min-height:280px;padding:14px 10px 16px}
+  .service-pogo{height:150px}
+  .service-pogo-card h3{font-size:12px;min-height:34px}
+  .service-pogo-card p{font-size:10px}
+}
+
+
+/* Fleet artwork: transparent vehicle cut-outs, full vehicle visible, no numbered panels */
+.fleet-visual.fleet-originals.fleet-transparent{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+  align-items:stretch;
+  height:auto;
+  min-height:0;
+  padding:0;
+  background:transparent;
+}
+.fleet-visual.fleet-transparent:before{display:none!important}
+.fleet-transparent .fleet-vehicle-card{
+  width:100%;
+  padding:0;
+  margin:0;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  overflow:visible;
+}
+.fleet-transparent .fleet-vehicle-card:after{display:none!important}
+.fleet-transparent .fleet-vehicle-label{
+  margin:0 0 8px;
+  padding:0;
+  color:inherit;
+}
+.fleet-transparent .fleet-vehicle-label span{display:none!important}
+.fleet-transparent .fleet-vehicle-label strong{
+  font-size:13px;
+  letter-spacing:.01em;
+}
+.fleet-transparent .fleet-vehicle-card img{
+  display:block;
+  width:100%;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:center;
+  margin:0 auto;
+  filter:drop-shadow(0 10px 12px rgba(0,0,0,.18));
+}
+.fleet-transparent .visual-note{
+  margin:0;
+  text-align:right;
+}
+@media(max-width:760px){
+  .fleet-visual.fleet-originals.fleet-transparent{gap:18px}
+  .fleet-transparent .fleet-vehicle-card img{width:100%;max-height:none!important}
+}
+
+
+/* Fleet vehicle presentation: full silhouettes, correct crop, no artificial drop shadows */
+.fleet-section{overflow:visible!important}
+.fleet-grid{min-width:0}
+.fleet-visual.fleet-originals.fleet-transparent{
+  min-width:0;
+  width:100%;
+  overflow:visible;
+  align-items:stretch;
+}
+.fleet-transparent .fleet-vehicle-card{
+  min-width:0;
+  width:100%;
+  overflow:visible;
+}
+.fleet-transparent .fleet-vehicle-card img{
+  display:block;
+  width:100%;
+  max-width:100%;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  filter:none!important;
+  box-shadow:none!important;
+}
+.fleet-transparent .fleet-vehicle-label strong{
+  font-size:13px;
+}
+@media(max-width:760px){
+  .fleet-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+  .fleet-visual.fleet-originals.fleet-transparent{gap:24px}
+}
+
+
+/* Final fleet display polish: no ground shadows, no crop, no image effects */
+.fleet-transparent .fleet-vehicle-card img{
+  filter:none!important;
+  box-shadow:none!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  width:100%!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:none!important;
+}
+.fleet-visual.fleet-originals.fleet-transparent,
+.fleet-transparent .fleet-vehicle-card{
+  overflow:visible!important;
+  min-width:0!important;
+}
+
+
+/* PDL repair: keep the Pogo services strip visible immediately below the main nav */
+.hero.hero-singapore{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  height:calc(100svh - 76px);
+  min-height:620px;
+  overflow:hidden;
+}
+.hero.hero-singapore > .hero-city{
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+.hero.hero-singapore > .services-shortcuts{
+  position:relative!important;
+  inset:auto!important;
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  flex:0 0 78px;
+  width:100%;
+  min-height:78px;
+  z-index:8!important;
+  background:rgba(255,255,255,.91)!important;
+  border-bottom:1px solid rgba(255,255,255,.72);
+  box-shadow:0 5px 18px rgba(0,0,0,.12);
+  backdrop-filter:blur(9px);
+}
+.hero.hero-singapore > .services-shortcuts .shortcut-grid{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  min-height:78px;
+  max-width:1180px;
+  margin:0 auto;
+}
+.hero.hero-singapore > .services-shortcuts .shortcut-grid>a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:78px;
+  gap:8px;
+  padding:5px 10px;
+  border-right:1px solid rgba(0,0,0,.10);
+  background:transparent;
+}
+.hero.hero-singapore > .services-shortcuts .shortcut-grid>a:last-child{border-right:0}
+.hero.hero-singapore > .services-shortcuts .shortcut-pogo{
+  display:block;
+  width:64px;
+  height:64px;
+  flex:0 0 64px;
+  object-fit:contain;
+  object-position:center;
+  opacity:1;
+  filter:none;
+}
+.hero.hero-singapore > .hero-grid{
+  position:relative;
+  z-index:2;
+  flex:1 1 auto;
+  width:min(1180px, calc(100% - 48px));
+  min-height:0;
+  height:auto;
+  padding-top:10px;
+  padding-bottom:12px;
+  margin:0 auto;
+  align-items:center;
+}
+.hero.hero-singapore .hero-art{min-height:0;height:100%}
+.hero.hero-singapore .pogo-hero{
+  height:min(76vh,700px);
+  max-height:100%;
+  width:auto;
+  object-fit:contain;
+  filter:none;
+}
+@media(max-width:760px){
+  .hero.hero-singapore{
+    height:auto;
+    min-height:0;
+  }
+  .hero.hero-singapore > .services-shortcuts{
+    flex:0 0 auto;
+    min-height:0;
+    background:rgba(255,255,255,.94)!important;
+  }
+  .hero.hero-singapore > .services-shortcuts .shortcut-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    min-height:0;
+    padding:4px 0;
+  }
+  .hero.hero-singapore > .services-shortcuts .shortcut-grid>a{
+    min-height:58px;
+    justify-content:flex-start;
+    border-bottom:1px solid #eee;
+    border-right:0;
+  }
+  .hero.hero-singapore > .services-shortcuts .shortcut-grid>a:last-child{
+    grid-column:1/-1;
+    justify-content:center;
+  }
+  .hero.hero-singapore > .hero-grid{
+    width:min(100% - 36px, 560px);
+    grid-template-columns:1fr;
+    padding-top:22px;
+    padding-bottom:0;
+  }
+  .hero.hero-singapore .hero-copy{padding:24px 0 0}
+  .hero.hero-singapore .hero-art{height:360px}
+  .hero.hero-singapore .pogo-hero{height:355px;max-width:88%}
+}
+
+
+/* Pogo is a separate transparent foreground layer over the Singapore hero photo */
+.hero.hero-singapore .pogo-hero{
+  background:transparent!important;
+  filter:none!important;
+  box-shadow:none!important;
+  object-fit:contain;
+}
+
+
+/* Contact cards: use the approved Pogo mascot mark in place of generic symbols */
+.contact-card .contact-pogo-icon{
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  border-radius:50%;
+  background:#fff0e3;
+  margin-bottom:18px;
+  padding:3px;
+}
+.contact-card .contact-pogo-icon img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center top;
+}
+
+
+/* Contact cards: distinct Pogo actions for phone, email and address */
+.contact-card .contact-pogo-icon{
+  width:88px;
+  height:88px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:visible;
+  border-radius:0;
+  background:transparent;
+  margin:0 0 12px;
+  padding:0;
+}
+.contact-card .contact-pogo-icon img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center bottom;
+}
+.contact-card{min-height:205px}
+@media(max-width:760px){
+  .contact-card .contact-pogo-icon{width:78px;height:78px}
+}
+
+/* Restore a little more prominence to the main hero Pogo */
+@media(min-width:761px){
+  .hero.hero-singapore .pogo-hero{
+    height:min(84vh,780px);
+    max-height:calc(100% + 28px);
+    transform:scale(1.04);
+    transform-origin:center bottom;
+  }
+}
+
+
+/* Content additions: About principles and transport-partner enquiry */
+.about-principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:44px}
+.about-principles article{padding:22px 24px;background:#fff;border:1px solid #e8e8e6}
+.about-principles article p{margin:10px 0 0;color:#686868;font-size:13px;line-height:1.8}
+.partner-note{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:22px;padding:24px 26px;background:#fff;border:1px solid #e8e8e6}
+.partner-note strong{font-family:Montserrat,sans-serif;font-size:15px}
+.partner-note p{margin:7px 0 0;color:#777;font-size:13px;line-height:1.7}
+@media(max-width:760px){.about-principles{grid-template-columns:1fr;gap:12px;margin-top:26px}.partner-note{align-items:flex-start;flex-direction:column}}
+
+/* PDL enquiry, career and partner registration forms */
+.application-section,.partner-application-section{background:#f6f6f4}
+.application-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.application-copy h2{font-family:Montserrat,sans-serif;font-size:clamp(34px,4vw,54px);line-height:1.08;margin:16px 0}
+.application-copy h2 em{color:#f58220;font-style:normal}
+.application-copy p{color:#686868;line-height:1.8;font-size:14px}
+.portal-form{background:#fff;border:1px solid #e8e8e6;padding:30px;display:grid;gap:16px;box-shadow:0 12px 34px #00000008}
+.portal-form h3{font-family:Montserrat,sans-serif;font-size:19px;margin:0 0 4px}
+.portal-form label{display:grid;gap:7px;font-size:12px;font-weight:700;color:#333}
+.portal-form input,.portal-form select,.portal-form textarea{width:100%;padding:12px 13px;border:1px solid #dededb;background:#fff;font:inherit;font-size:13px;color:#222;border-radius:2px}
+.portal-form input[type=file]{padding:9px}
+.portal-form textarea{resize:vertical}
+.portal-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.portal-status{font-size:13px;color:#3b6b3b;margin:0;min-height:18px}
+.portal-status.error{color:#a32e2e}
+@media(max-width:760px){.application-grid{grid-template-columns:1fr;gap:24px}.portal-form{padding:20px}.portal-form .form-row{grid-template-columns:1fr}}
+
+.portal-form .consent-line,.quote-form .consent-line{display:flex;grid-template-columns:none;align-items:flex-start;gap:9px;font-weight:400;line-height:1.6;color:#666}
+.portal-form .consent-line input,.quote-form .consent-line input{width:auto;margin:2px 0 0;flex:0 0 auto}
+.footer-bottom a{color:inherit;text-decoration:underline}

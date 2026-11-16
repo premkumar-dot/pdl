@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700">
+<defs>
+ <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#7db8e8"/><stop offset=".55" stop-color="#d5e8f7"/><stop offset="1" stop-color="#f6c9a0"/></linearGradient>
+ <linearGradient id="water" x2="0" y2="1"><stop stop-color="#477fa5"/><stop offset="1" stop-color="#173f60"/></linearGradient>
+ <linearGradient id="glass" x2="0" y2="1"><stop stop-color="#213d5a"/><stop offset="1" stop-color="#6d9bb9"/></linearGradient>
+</defs>
+<rect width="1600" height="440" fill="url(#sky)"/><rect y="440" width="1600" height="260" fill="url(#water)"/>
+<circle cx="1270" cy="155" r="76" fill="#ffe0b5" opacity=".6"/>
+<!-- distant skyline -->
+<g fill="#5c7891" opacity=".72">
+ <path d="M0 390h90V270h38v120h30V225h52v165h45V300h36v90h43V250h58v140h42V320h42v70h50V270h45v120h38V235h45v155h50V300h45v90h35V250h48v140h38V290h50v100h42V220h52v170h35V290h50v100h38V260h44v130h45V310h42v80h40V245h48v145h50V300h48v90h50v-110h50v110h60v40H0z"/>
+</g>
+<!-- Marina Bay Sands inspired silhouette -->
+<g>
+ <rect x="300" y="215" width="95" height="225" rx="5" fill="url(#glass)"/>
+ <rect x="415" y="185" width="105" height="255" rx="5" fill="url(#glass)"/>
+ <rect x="540" y="225" width="95" height="215" rx="5" fill="url(#glass)"/>
+ <path d="M275 205 Q455 160 655 198 L650 220 Q450 190 280 228Z" fill="#263f58"/>
+ <path d="M300 240h335M300 278h335M300 316h335M300 354h335M300 392h335" stroke="#c4d7e5" stroke-width="4" opacity=".55"/>
+ <path d="M330 220v220M365 220v220M445 200v240M485 200v240M565 225v215M600 225v215" stroke="#b5cedd" stroke-width="3" opacity=".5"/>
+</g>
+<!-- Singapore Flyer -->
+<g transform="translate(1265 350)" stroke="#344e65" stroke-width="5" fill="none">
+ <circle r="145"/><circle r="8" fill="#344e65"/>
+ <path d="M0-145V145M-145 0H145M-103-103L103 103M103-103L-103 103M-55-134L55 134M55-134L-55 134M-134-55L134 55M-134 55L134-55"/>
+ <path d="M0 145v35M-45 180h90" stroke-width="8"/>
+ <g fill="#f7f5f0" stroke-width="2"><rect x="-9" y="-157" width="18" height="13" rx="4"/><rect x="-9" y="144" width="18" height="13" rx="4"/><rect x="-157" y="-9" width="13" height="18" rx="4"/><rect x="144" y="-9" width="13" height="18" rx="4"/></g>
+</g>
+<!-- waterfront / reflections -->
+<path d="M0 465 Q260 445 500 470T1000 462T1600 470" stroke="#b8d7e8" stroke-width="5" opacity=".4" fill="none"/>
+<g opacity=".22" fill="#e7c6a8"><path d="M300 445h335l-35 170H335z"/><path d="M1200 450h130l-20 180h-90z"/></g>
+<g stroke="#b5d2e2" opacity=".35"><path d="M80 510h380M650 545h310M1080 520h420M160 600h260M780 620h430" stroke-width="3"/></g>
+<rect y="430" width="1600" height="12" fill="#f7d4b2" opacity=".55"/>
+</svg>
