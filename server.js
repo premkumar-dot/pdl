@@ -16,6 +16,7 @@ const PORT = Number(process.env.PORT || 3000);
 const ROOT = __dirname;
 const DATA_DIR = path.join(ROOT, 'data');
 const PRIVATE_UPLOADS = path.join(DATA_DIR, 'private-uploads');
+app.set('trust proxy', 1);
 fs.mkdirSync(PRIVATE_UPLOADS, { recursive: true });
 fs.mkdirSync(DATA_DIR, { recursive: true });
 
