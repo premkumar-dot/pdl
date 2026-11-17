@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
+const nodemailer = require('nodemailer');
 const session = require('express-session');
 const SQLiteStore = require('connect-sqlite3')(session);
 const Database = require('better-sqlite3');
@@ -81,6 +82,21 @@ app.use(session({
 const publicLimiter = rateLimit({ windowMs: 15 * 60 * 1000, limit: 12, standardHeaders: true, legacyHeaders: false });
 const insert = db.prepare(`INSERT INTO submissions (type,name,email,phone,company,payload,file_name,stored_file)
 VALUES (@type,@name,@email,@phone,@company,@payload,@file_name,@stored_file)`);
+const NOTIFY_EMAIL = clean(process.env.NOTIFY_EMAIL || 'info@pdl-logistics.com.sg', 160).toLowerCase();
+const mailHost = clean(process.env.SMTP_HOST, 200);
+const mailPort = Number(process.env.SMTP_PORT || 587);
+const mailUser = clean(process.env.SMTP_USER, 200);
+const mailPass = String(process.env.SMTP_PASS || '');
+const mailSecure = String(process.env.SMTP_SECURE || '').toLowerCase() === 'true';
+const mailFrom = clean(process.env.MAIL_FROM || mailUser || NOTIFY_EMAIL, 200);
+const mailer = mailHost
+  ? nodemailer.createTransport({
+      host: mailHost,
+      port: mailPort,
+      secure: mailSecure,
+      auth: mailUser && mailPass ? { user: mailUser, pass: mailPass } : undefined
+    })
+  : null;
 
 function clean(v, max=2500) { return String(v || '').trim().slice(0,max); }
 function validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
@@ -102,6 +118,32 @@ function auth(req,res,next) {
   if (!req.session.admin) return res.status(401).json({error:'Please sign in again.'});
   next();
 }
+function humanType(type) {
+  return ({ enquiry: 'Enquiry', career: 'Career Application', partner: 'Transport Partner Registration' }[type] || 'Submission');
+}
+async function notifySubmission(type, req, file, id) {
+  if (!mailer || !NOTIFY_EMAIL) return;
+  const fields = Object.entries(req.body || {})
+    .filter(([k]) => k !== 'consent' && k !== 'password')
+    .map(([k,v]) => `${k}: ${clean(v, 1000)}`)
+    .join('\n');
+  const subject = `[PDL Website] ${humanType(type)} #${id}`;
+  const text = [
+    `Type: ${humanType(type)}`,
+    `Submission ID: ${id}`,
+    `Submitted At: ${new Date().toISOString()}`,
+    `IP Address: ${clean(req.ip, 120)}`,
+    file ? `Attachment: ${clean(file.originalname, 200)}` : 'Attachment: none',
+    '',
+    'Form details:',
+    fields || '(no fields)'
+  ].join('\n');
+  try {
+    await mailer.sendMail({ from: mailFrom, to: NOTIFY_EMAIL, subject, text });
+  } catch (err) {
+    console.error('Unable to send submission email notification:', err.message || err);
+  }
+}
 function sameOrigin(req,res,next) {
   const origin = req.get('origin');
   if (origin) {
@@ -117,6 +159,7 @@ app.post('/api/enquiries', publicLimiter, upload.none(), sameOrigin, (req,res) =
   if (err) return res.status(400).json({error:err});
   if (!validEmail(req.body.email)) return res.status(400).json({error:'Please enter a valid email address.'});
   const result = storeSubmission('enquiry',req,null,req.body.name,req.body.email,req.body.phone,req.body.company);
+  notifySubmission('enquiry', req, null, result.lastInsertRowid);
   res.status(201).json({message:'Thank you. Your enquiry has been received. The PDL team can now review it.',id:result.lastInsertRowid});
 });
 app.post('/api/careers', publicLimiter, upload.single('cv'), sameOrigin, (req,res) => {
@@ -124,6 +167,7 @@ app.post('/api/careers', publicLimiter, upload.single('cv'), sameOrigin, (req,re
   if (err) { if(req.file) fs.unlinkSync(req.file.path); return res.status(400).json({error:err}); }
   if (!validEmail(req.body.email)) { if(req.file) fs.unlinkSync(req.file.path); return res.status(400).json({error:'Please enter a valid email address.'}); }
   const result = storeSubmission('career',req,req.file,req.body.name,req.body.email,req.body.phone,'');
+  notifySubmission('career', req, req.file, result.lastInsertRowid);
   res.status(201).json({message:'Thank you. Your career application has been received.',id:result.lastInsertRowid});
 });
 app.post('/api/partners', publicLimiter, upload.single('document'), sameOrigin, (req,res) => {
@@ -131,6 +175,7 @@ app.post('/api/partners', publicLimiter, upload.single('document'), sameOrigin, 
   if (err) { if(req.file) fs.unlinkSync(req.file.path); return res.status(400).json({error:err}); }
   if (!validEmail(req.body.email)) { if(req.file) fs.unlinkSync(req.file.path); return res.status(400).json({error:'Please enter a valid email address.'}); }
   const result = storeSubmission('partner',req,req.file,req.body.contactName,req.body.email,req.body.phone,req.body.company);
+  notifySubmission('partner', req, req.file, result.lastInsertRowid);
   res.status(201).json({message:'Thank you. Your transport partner registration has been received.',id:result.lastInsertRowid});
 });
 
